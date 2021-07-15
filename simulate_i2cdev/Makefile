@@ -23,9 +23,10 @@ build:
 	# 然后modules就是类似我们上面的build定义类似的，内核定义好了个modules的编译参数
 	# 我们只要把要编译的模块代码通过M变量传递过去就可以编译内核模块了
 	make -C $(KDIR) M=$(PWD) modules
+	cp -rf $(TARGET).ko $(output_dir)/
 
 clean:
 	#下面这些是编译内核模块输出的一些中间参数，我没在clean的时候可以把这些删除
-	rm -rf *.o *.ko *.mod.c *.markers *.order *.symvers .*.cmd .tmp_versions  *.mod
+	make -C $(KDIR) M=$(PWD) clean
 
 

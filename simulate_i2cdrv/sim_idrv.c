@@ -43,7 +43,7 @@ static struct platform_driver g_sim_idri = {
     },
 };
 
-/* 这是一个宏定义，展开之后就是
+/* 这是一个宏定义，展开之后就是:
 static int __init g_sim_idri_init(void)
 {
     return platform_driver_register(&(g_sim_idri));
